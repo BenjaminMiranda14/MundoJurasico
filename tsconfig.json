@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+    "@/*": ["./src/*"],
+    "@assets/*": ["./attached_assets/*"]
+    },
+    "types": ["node", "vite/client"]
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "build", "dist"]
+}
