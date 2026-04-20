@@ -5,27 +5,32 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 const port = Number(process.env.PORT) || 5173;
-const basePath = process.env.BASE_PATH || "/";
 
 export default defineConfig({
-  base: basePath,
+  // 👇 CLAVE para GitHub Pages (cambiar si tu repo tiene otro nombre)
+  base: "/MundoJurasico/",
+
   plugins: [
     react(),
     tailwindcss(),
     runtimeErrorOverlay(),
   ],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      "@assets": path.resolve(__dirname, "attached_assets"),
     },
     dedupe: ["react", "react-dom"],
   },
-  root: path.resolve(import.meta.dirname),
+
+  root: path.resolve(__dirname),
+
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
-  },
+},
+
   server: {
     port,
     host: true,
@@ -33,6 +38,7 @@ export default defineConfig({
       strict: false,
     },
   },
+
   preview: {
     port,
     host: true,

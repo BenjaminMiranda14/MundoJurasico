@@ -39,11 +39,6 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link href="/reservas">
-                <Button size="lg" className="w-full sm:w-auto px-8 h-12">
-                  Consultar disponibilidad
-                </Button>
-              </Link>
               <Link href="/galeria">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto px-8 h-12 border-primary text-primary hover:bg-primary hover:text-background">
                   Ver galería
@@ -131,7 +126,6 @@ export default function Home() {
                   "Capacidad para hasta 250 invitados",
                   "Pista de baile con ambientación selvática",
                   "Zona infantil de juegos",
-                  "Estacionamiento privado"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-foreground">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary block shrink-0" />
@@ -162,7 +156,7 @@ export default function Home() {
             <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
               Las fechas se llenan rápido. Consultá disponibilidad y armemos juntos la fiesta perfecta.
             </p>
-            <Link href="/reservas">
+            <Link href="/Contacto">
               <Button size="lg" className="px-10 h-12">
                 Consultar disponibilidad
               </Button>
