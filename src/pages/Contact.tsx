@@ -15,6 +15,9 @@ export default function Contact() {
   const { toast } = useToast();
   const [sending, setSending] = useState(false);
 
+  // URL del mapa real (Reemplaza por el tuyo en Google Maps -> Compartir -> Incorporar)
+  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.0927819918605!2d-58.37821448431222!3d-34.710019842348345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd316ca89a0f%3A0xb3ae6feec532541e!2zSnVyw6FzaWNv!5e0!3m2!1ses!2sar!4v1776655362511!5m2!1ses!2sar%22%20width=%22600%22%20height=%22450%22%20style=%22border:0;%22%20allowfullscreen=%22%22%20loading=%22lazy%22%20referrerpolicy=%22no-referrer-when-downgrade";
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
@@ -43,7 +46,7 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          {/* WhatsApp CTA — prominent */}
+          {/* WhatsApp CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,16 +109,6 @@ export default function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-secondary border border-border flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Correo electrónico</h3>
-                    <p className="text-muted-foreground">info@salonjurasico.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-secondary border border-border flex items-center justify-center shrink-0">
                     <Clock className="w-4 h-4 text-primary" />
                   </div>
                   <div>
@@ -125,16 +118,19 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="mt-8 rounded-xl overflow-hidden border border-border h-52 relative bg-secondary">
-                <div className="absolute inset-0 flex items-center justify-center flex-col text-muted-foreground gap-2">
-                  <MapPin className="w-8 h-8 opacity-30" />
-                  <p className="text-xs">Av. de los Dinosaurios 1234</p>
-                </div>
-                <div className="absolute bottom-3 right-3 flex flex-col gap-1">
-                  <div className="w-7 h-7 bg-background border border-border rounded flex items-center justify-center text-sm shadow cursor-not-allowed">+</div>
-                  <div className="w-7 h-7 bg-background border border-border rounded flex items-center justify-center text-sm shadow cursor-not-allowed">-</div>
-                </div>
+              {/* MAPA INTERACTIVO (Reemplaza al placeholder del círculo rojo) */}
+              <div className="mt-8 rounded-xl overflow-hidden border border-border h-64 shadow-lg relative bg-secondary">
+                <iframe
+                  title="Ubicación Salón Jurásico"
+                  src={mapUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale hover:grayscale-0 transition-all duration-500"
+                ></iframe>
               </div>
             </motion.div>
 
