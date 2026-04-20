@@ -26,6 +26,7 @@ Sitio web desarrollado para un salón de fiestas infantiles temático, con una e
 
 ## 📦 Instalación y uso
 
+deploy manual
 
 Clonar el repositorio:
 
